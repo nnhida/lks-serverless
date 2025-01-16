@@ -35,7 +35,7 @@ const getEventById = async (id) => {
          const serialize = {
             eventId: eventData.eventId,
             title : eventData.title,
-            desc : eventData.desc,
+            description : eventData.description,
             category : eventData.category,
             image : eventData.image,
             date : eventData.date,
@@ -57,12 +57,12 @@ const getEventById = async (id) => {
 const createEvent = async (rawBody) => {
    try {
       await eventSchema.validate(rawBody, { abortEarly: false });
-      const { title, desc, category, image, date, publish, location } = rawBody;
+      const { title, description, category, image, date, publish, location } = rawBody;
 
       const { Event } = await initDatabase();
       const rawData = {
          title,
-         desc,
+         description,
          category,
          image,
          date,
@@ -89,12 +89,12 @@ const createEvent = async (rawBody) => {
 const updateEvent = async (rawBody) => {
    try {
       await eventSchema.validate(rawBody, { abortEarly: false });
-      const {  eventId, title, desc, category, image, date, publish, location  } = rawBody;
+      const {  eventId, title, description, category, image, date, publish, location  } = rawBody;
 
       const { Event } = await initDatabase();
       const rawData = {
          title,
-         desc,
+         description,
          category,
          image,
          date,
@@ -137,13 +137,13 @@ const removeEvent = async (id) => {
 const createTicket = async (rawBody) => {
    try {
       await ticketSchema.validate(rawBody, { abortEarly: false });
-      const { eventId, title, desc, price, stock } = rawBody;
+      const { eventId, title, description, price, stock } = rawBody;
 
       const { Ticket } = await initDatabase();
       const rawData = {
          eventId,
          title,
-         desc,
+         description,
          price,
          stock
       };

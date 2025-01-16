@@ -3,14 +3,14 @@ const yup = require("/opt/node_modules/yup");
 const ticketSchema = yup.object().shape({
    eventId: yup.string().required(),
    title: yup.string().required(),
-   desc: yup.string(),
+   description: yup.string(),
    price: yup.number().positive().integer().required(),
    stock: yup.number().positive().integer().required(),
 })
 
 const eventSchema = yup.object().shape({
    title: yup.string().required(),
-   desc: yup.string(),
+   description: yup.string(),
    image: yup.string().required(),
    date: yup.string().required(),
    category: yup.string().required(),

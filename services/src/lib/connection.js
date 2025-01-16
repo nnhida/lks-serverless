@@ -41,7 +41,7 @@ const initDatabase = async () => {
                type: DataTypes.STRING,
                allowNull: false,
             },
-            desc: {
+            description: {
                type: DataTypes.TEXT,
                allowNull: true
             },
@@ -92,7 +92,7 @@ const initDatabase = async () => {
                type: DataTypes.STRING,
                allowNull: false,
             },
-            desc: {
+            description: {
                type: DataTypes.TEXT,
                allowNull: true
             },
