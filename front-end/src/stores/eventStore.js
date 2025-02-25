@@ -4,7 +4,7 @@ import { useNotifStore } from "./notifStore";
 
 const api_url = "https://qd2wb8defb.execute-api.us-west-2.amazonaws.com/production";
 const headers = {
-   Authorization: "bcc7c5b30027f185f110b173e58bfc21",
+   Authorization: "0cb9fabcae3d4c05d924bb2480e3a1e7",
    Deviceid: "frontEnd-001",
    "Content-Type": "application/json", 
 }
