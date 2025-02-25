@@ -19,7 +19,7 @@ const initDatabase = async () => {
          host: endpoint,
          dialect: "postgres", // Database Engine
          dialectOptions: {
-            ssl: true,
+            ssl: false,
          },
       });
 
