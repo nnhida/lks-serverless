@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import axiosIns from "@/axios";
+import axiosIns from "../plugins/axios";
 import { useNotifStore } from "./notifStore";
 
 const api_url = `${import.meta.env.VITE_BASE_API_URL}`;

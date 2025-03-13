@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import axiosIns from "@/axios";
+import axiosIns from "../plugins/axios";
 import { useNotifStore } from "./notifStore";
 import { useEventStore } from "./eventStore";
 
