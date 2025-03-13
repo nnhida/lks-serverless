@@ -1,10 +1,10 @@
 const { DynamoDBClient, ScanCommand, PutItemCommand, DeleteItemCommand } = require('/opt/node_modules/@aws-sdk/client-dynamodb');
 const { unmarshall } = require("/opt/node_modules/@aws-sdk/util-dynamodb");
 const { ApiGatewayManagementApiClient, PostToConnectionCommand } = require("/opt/node_modules/@aws-sdk/client-apigatewaymanagementapi");
-const dynamodb = new DynamoDBClient({ region: 'us-east-1' });
+const dynamodb = new DynamoDBClient({ region: 'us-west-2' });
 const apiGateway = new ApiGatewayManagementApiClient({
    apiVersion: '2018-11-29',
-   endpoint: `https://${process.env.WEBSOCKET_ID}.execute-api.us-east-1.amazonaws.com/dev`, // Retrieve the API endpoint from environment variables
+   endpoint: `https://${process.env.WEBSOCKET_ID}.execute-api.us-west-2.amazonaws.com/dev`, // Retrieve the API endpoint from environment variables
 });
 
 const getConnectedClients = async () => {

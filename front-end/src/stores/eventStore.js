@@ -2,10 +2,10 @@ import { defineStore } from "pinia";
 import axios from "axios";
 import { useNotifStore } from "./notifStore";
 
-const api_url = "https://qd2wb8defb.execute-api.us-west-2.amazonaws.com/production";
+const api_url = `${import.meta.env.VITE_BASE_API_URL}`;
 const headers = {
-   Authorization: "0cb9fabcae3d4c05d924bb2480e3a1e7",
-   Deviceid: "frontEnd-001",
+   Authorization: `${import.meta.env.VITE_API_TOKEN}`,
+   Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
    "Content-Type": "application/json", 
 }
 

@@ -3,7 +3,7 @@ const {
    GetParametersCommand,
 } = require("/opt/node_modules/@aws-sdk/client-ssm");
 
-const ssmClient = new SSMClient({ region: "us-east-1" });
+const ssmClient = new SSMClient({ region: "us-west-2" });
 
 const getParameter = async (parameterNames, decryption = false) => {
    const params = {

@@ -6,7 +6,7 @@ const { eventSchema, orderSchema, ticketSchema } = require("./validation");
 
 const apiGateway = new ApiGatewayManagementApiClient({
    apiVersion: '2018-11-29',
-   endpoint: `https://${process.env.WEBSOCKET_ID}.execute-api.us-east-1.amazonaws.com/dev`, // Retrieve the API endpoint from environment variables
+   endpoint: `https://${process.env.WEBSOCKET_ID}.execute-api.us-west-2.amazonaws.com/dev`, // Retrieve the API endpoint from environment variables
 });
 
 const getEvent = async () => {
@@ -219,7 +219,7 @@ const getOrder = async () => {
 
 const createOrder = async (message, sqsUrl) => {
    try {
-      const sqsClient = new SQSClient({ region: "us-east-1" });
+      const sqsClient = new SQSClient({ region: "us-west-2" });
       const { connectionId, body} = JSON.parse(message.body);
       const { sequelize, Ticket, Order, OrderDetail, Payment } = await initDatabase();
       const t = await sequelize.transaction();

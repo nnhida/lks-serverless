@@ -7,7 +7,7 @@ const {
 } = require("/opt/node_modules/@aws-sdk/client-dynamodb");
 const { buildResponse } = require("/opt/utilities");
 
-const config = { region: "us-east-1" };
+const config = { region: "us-west-2" };
 const client = new DynamoDBClient(config);
 const TableName = "tokens";
 

@@ -1,7 +1,7 @@
 const { buildResponse, randomNumber } = require("/opt/utilities");
 const { SQSClient, SendMessageCommand } = require('/opt/node_modules/@aws-sdk/client-sqs');
 
-const sqsClient = new SQSClient({ region: 'us-east-1' });
+const sqsClient = new SQSClient({ region: 'us-west-2' });
 const queueUrl = process.env.SQS_QUEUE_URL;
 
 module.exports.handler = async (event) => {

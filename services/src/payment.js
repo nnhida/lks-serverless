@@ -2,9 +2,9 @@ const { TextractClient, StartDocumentTextDetectionCommand, GetDocumentTextDetect
 const { SQSClient, DeleteMessageCommand } = require("/opt/node_modules/@aws-sdk/client-sqs");
 const { buildResponse } = require("/opt/utilities");
 
-const region = "us-east-1";
+const region = "us-west-2";
 const textractClient = new TextractClient({ region });
-const sqsClient = new SQSClient({ region: "us-east-1" });
+const sqsClient = new SQSClient({ region: "us-west-2" });
 const sqsUrl = process.env.SQS_QUEUE_URL;
 
 module.exports.handler = async (event) => {

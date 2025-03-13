@@ -14,6 +14,7 @@ const axiosIns = axios.create({
 axiosIns.interceptors.request.use(config => {
   // Retrieve token from localStorage
   const token = localStorage.getItem('accessToken')
+  console.log("Token yang dikirim:", token);
 
   // If token is found
   if (token) {
