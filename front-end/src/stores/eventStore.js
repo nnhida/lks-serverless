@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import axios from "axios";
+import axiosIns from "@/axios";
 import { useNotifStore } from "./notifStore";
 
 const api_url = `${import.meta.env.VITE_BASE_API_URL}`;
@@ -30,7 +30,7 @@ export const useEventStore = defineStore("eventStore", {
          const notifStore = useNotifStore();
 
          try {
-            const response = await axios.get(`${api_url}/event`, { headers });
+            const response = await axiosIns.get(`${api_url}/event`, { headers });
             const data = response.data;
             const resData = data.data;
             this.events = resData;
@@ -44,7 +44,7 @@ export const useEventStore = defineStore("eventStore", {
          const notifStore = useNotifStore();
 
          try {
-            const response = await axios.get(`${api_url}/event/${id}`, { headers });
+            const response = await axiosIns.get(`${api_url}/event/${id}`, { headers });
             const data = response.data;
             const resData = data.data;
             this.eventDetails = resData;
