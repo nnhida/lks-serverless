@@ -37,7 +37,7 @@ export const useEventStore = defineStore("eventStore", {
          // };
 
          try {
-            const response = await axiosIns.get("/event", { headers });
+            const response = await axiosIns.get("/event");
             const data = response.data;
             const resData = data.data;
             this.events = resData;
@@ -51,7 +51,7 @@ export const useEventStore = defineStore("eventStore", {
          const notifStore = useNotifStore();
 
          try {
-            const response = await axiosIns.get(`/event/${id}`, { headers });
+            const response = await axiosIns.get(`/event/${id}`);
             const data = response.data;
             const resData = data.data;
             this.eventDetails = resData;
