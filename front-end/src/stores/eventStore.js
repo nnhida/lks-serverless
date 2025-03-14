@@ -33,7 +33,7 @@ export const useEventStore = defineStore("eventStore", {
 
             const response = await fetch(`${api_url}/event`, {
                method: "GET",
-               headers: { ...headers }
+               headers: headers
             });
 
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
@@ -51,9 +51,9 @@ export const useEventStore = defineStore("eventStore", {
          try {
             console.log("Fetching event by ID:", `${api_url}/event/${id}`);
 
-            const response = await fetch(`${api_url}/event/${id}`, {
+            const response = await fetch(`${api_url}/event${id}`, {
                method: "GET",
-               headers: { ...headers }
+               headers: headers
             });
 
             if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
