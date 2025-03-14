@@ -26,7 +26,7 @@ axiosIns.interceptors.request.use(config => {
     // Set authorization header
     // ℹ️ JSON.parse will convert token to string
     // config.headers.Authorization = token ? `Bearer ${JSON.parse(token)}` : ''
-    config.headers.Authorization = import.meta.env.VITE_API_TOKEN
+    config.headers.Authorization = import.meta.env.VITE_API_TOKEN;
     config.headers.DeviceId = import.meta.env.VITE_DEVICE_ID
   }
 
