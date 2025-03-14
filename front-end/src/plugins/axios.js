@@ -4,7 +4,7 @@ import router from '@/router'
 const axiosIns = axios.create({
 // You can add your headers here
 // ================================
-  baseURL: import.meta.env.VITE_BASE_API_URL,
+  // baseURL: import.meta.env.VITE_BASE_API_URL,
 //   headers: {
 //     "Authorization": import.meta.env.VITE_API_TOKEN,
 //     "Deviceid": import.meta.env.VITE_DEVICE_ID,

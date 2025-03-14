@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
-import axiosIns from "../plugins/axios";
+import axios from "axios";
+// import axiosIns from "../plugins/axios";
 import { useNotifStore } from "./notifStore";
 import { useEventStore } from "./eventStore";
 
@@ -21,7 +22,7 @@ export const useOrderStore = defineStore("orderStore", {
          const notifStore = useNotifStore();
 
          try {
-            const response = await axiosIns.post(`${api_url}/order`, rawData , { headers });
+            const response = await axios.post(`${api_url}/order`, rawData , { headers });
             const httpStatus = response.status;
             if (httpStatus === 200) {
                return true
