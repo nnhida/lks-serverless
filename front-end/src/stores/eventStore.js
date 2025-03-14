@@ -4,11 +4,11 @@ import axiosIns from "../plugins/axios";
 import { useNotifStore } from "./notifStore";
 
 const api_url = `${import.meta.env.VITE_BASE_API_URL}`;
-const headers = {
-   Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
-   Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
-   "Content-Type": "application/json", 
-}
+// const headers = {
+//    Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+//    Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
+//    "Content-Type": "application/json", 
+// }
 
 export const useEventStore = defineStore("eventStore", {
    stores: { notifStore: useNotifStore },
@@ -30,6 +30,13 @@ export const useEventStore = defineStore("eventStore", {
       async getEvents() {
          const notifStore = useNotifStore();
 
+         const headers = {
+            Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+            Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
+            "Content-Type": "application/json",
+         };
+
+         console.log("API URL:", api_url);
          console.log("Headers yang dikirim:", headers);
 
          try {
