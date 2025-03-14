@@ -6,8 +6,8 @@ const axiosIns = axios.create({
 // ================================
   baseURL: import.meta.env.VITE_BASE_API_URL,
   headers: {
-    "Authorization": import.meta.env.VITE_API_TOKEN,
-    "Deviceid": import.meta.env.VITE_DEVICE_ID,
+    // "Authorization": import.meta.env.VITE_API_TOKEN,
+    // "Deviceid": import.meta.env.VITE_DEVICE_ID,
     "Content-Type": "application/json",
  },
 });
