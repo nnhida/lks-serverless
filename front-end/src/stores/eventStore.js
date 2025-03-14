@@ -4,11 +4,11 @@ import axiosIns from "../plugins/axios";
 import { useNotifStore } from "./notifStore";
 
 const api_url = `${import.meta.env.VITE_BASE_API_URL}`;
-// const headers = {
-//    Authorization: `${import.meta.env.VITE_API_TOKEN}`,
-//    Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
-//    "Content-Type": "application/json", 
-// }
+const headers = {
+   Authorization: `${import.meta.env.VITE_API_TOKEN}`,
+   Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
+   "Content-Type": "application/json", 
+}
 
 export const useEventStore = defineStore("eventStore", {
    stores: { notifStore: useNotifStore },
@@ -37,7 +37,7 @@ export const useEventStore = defineStore("eventStore", {
    };
 
          try {
-            const response = await axiosIns.get(`${api_url}/event`);
+            const response = await axiosIns.get(`${api_url}/event`, { headers });
             const data = response.data;
             const resData = data.data;
             this.events = resData;
@@ -51,7 +51,7 @@ export const useEventStore = defineStore("eventStore", {
          const notifStore = useNotifStore();
 
          try {
-            const response = await axiosIns.get(`${api_url}/event/${id}`);
+            const response = await axiosIns.get(`${api_url}/event/${id}`, { headers });
             const data = response.data;
             const resData = data.data;
             this.eventDetails = resData;
