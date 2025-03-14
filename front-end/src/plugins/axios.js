@@ -5,11 +5,11 @@ const axiosIns = axios.create({
 // You can add your headers here
 // ================================
   baseURL: import.meta.env.VITE_BASE_API_URL,
-  headers: {
-    "Authorization": import.meta.env.VITE_API_TOKEN,
-    "Deviceid": import.meta.env.VITE_DEVICE_ID,
-    "Content-Type": "application/json",
- },
+//   headers: {
+//     "Authorization": import.meta.env.VITE_API_TOKEN,
+//     "Deviceid": import.meta.env.VITE_DEVICE_ID,
+//     "Content-Type": "application/json",
+//  },
 });
 
 
@@ -17,22 +17,24 @@ const axiosIns = axios.create({
 axiosIns.interceptors.request.use(config => {
   // Retrieve token from localStorage
   const token = localStorage.getItem('accessToken')
+  config.headers = config.headers || {};
 
   // If token is found
   if (token) {
     // Get request headers and if headers is undefined assign blank object
-    config.headers = config.headers || {}
+    // config.headers = config.headers || {}
 
     // Set authorization header
     // ℹ️ JSON.parse will convert token to string
-    // config.headers.Authorization = token ? `Bearer ${JSON.parse(token)}` : ''
+    config.headers.Authorization = `Bearer ${JSON.parse(token)}`;
+  } else {
     config.headers.Authorization = import.meta.env.VITE_API_TOKEN;
-    config.headers.DeviceId = import.meta.env.VITE_DEVICE_ID
   }
+  config.headers.DeviceId = import.meta.env.VITE_DEVICE_ID;
 
   // Return modified config
   return config
-})
+});
 
 // ℹ️ Add response interceptor to handle 401 response
 axiosIns.interceptors.response.use(response => {

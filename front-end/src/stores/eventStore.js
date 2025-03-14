@@ -30,12 +30,6 @@ export const useEventStore = defineStore("eventStore", {
       async getEvents() {
          const notifStore = useNotifStore();
 
-         const headers = {
-      Authorization: `${import.meta.env.VITE_API_TOKEN}`,
-      Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
-      "Content-Type": "application/json",
-   };
-
          try {
             const response = await axiosIns.get(`${api_url}/event`, { headers });
             const data = response.data;
