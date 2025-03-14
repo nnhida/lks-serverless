@@ -30,17 +30,14 @@ export const useEventStore = defineStore("eventStore", {
       async getEvents() {
          const notifStore = useNotifStore();
 
-         const headers = {
-            Authorization: `${import.meta.env.VITE_API_TOKEN}`,
-            Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
-            "Content-Type": "application/json",
-         };
-
-         console.log("API URL:", api_url);
-         console.log("Headers yang dikirim:", headers);
+         // const headers = {
+         //    Authorization: `${import.meta.env.VITE_API_TOKEN}`,
+         //    Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
+         //    "Content-Type": "application/json",
+         // };
 
          try {
-            const response = await axiosIns.get(`${api_url}/event`, { headers });
+            const response = await axiosIns.get("/event", { headers });
             const data = response.data;
             const resData = data.data;
             this.events = resData;
@@ -54,7 +51,7 @@ export const useEventStore = defineStore("eventStore", {
          const notifStore = useNotifStore();
 
          try {
-            const response = await axiosIns.get(`${api_url}/event/${id}`, { headers });
+            const response = await axiosIns.get(`/event/${id}`, { headers });
             const data = response.data;
             const resData = data.data;
             this.eventDetails = resData;

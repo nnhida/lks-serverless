@@ -4,10 +4,13 @@ import router from '@/router'
 const axiosIns = axios.create({
 // You can add your headers here
 // ================================
-// baseURL: 'https://some-domain.com/api/',
-// timeout: 1000,
-// headers: {'X-Custom-Header': 'foobar'}
-})
+  baseURL: import.meta.env.VITE_BASE_API_URL,
+  headers: {
+    "Authorization": import.meta.env.VITE_API_TOKEN,
+    "Deviceid": import.meta.env.VITE_DEVICE_ID,
+    "Content-Type": "application/json",
+ },
+});
 
 
 // ℹ️ Add request interceptor to send the authorization header on each subsequent request after login
