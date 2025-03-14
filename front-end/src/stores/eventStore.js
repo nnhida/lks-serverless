@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+// import axios from "axios";
 import axiosIns from "../plugins/axios";
 import { useNotifStore } from "./notifStore";
 
@@ -28,6 +29,8 @@ export const useEventStore = defineStore("eventStore", {
    actions: {
       async getEvents() {
          const notifStore = useNotifStore();
+
+         console.log("Headers yang dikirim:", headers);
 
          try {
             const response = await axiosIns.get(`${api_url}/event`, { headers });
