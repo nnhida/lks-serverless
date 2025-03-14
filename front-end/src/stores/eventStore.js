@@ -5,7 +5,7 @@ import { useNotifStore } from "./notifStore";
 
 const api_url = `${import.meta.env.VITE_BASE_API_URL}`;
 // const headers = {
-//    Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+//    Authorization: `${import.meta.env.VITE_API_TOKEN}`,
 //    Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
 //    "Content-Type": "application/json", 
 // }
@@ -31,7 +31,7 @@ export const useEventStore = defineStore("eventStore", {
          const notifStore = useNotifStore();
 
          const headers = {
-            Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+            Authorization: `${import.meta.env.VITE_API_TOKEN}`,
             Deviceid: `${import.meta.env.VITE_DEVICE_ID}`,
             "Content-Type": "application/json",
          };
